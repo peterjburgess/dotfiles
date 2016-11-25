@@ -48,3 +48,6 @@ set autochdir
 
 "Set vim file to autoupdate when changed (hopefully)
 set autoread
+
+"Remap jk to esc
+:inoremap jk <Esc>
