@@ -26,10 +26,13 @@ filetype indent plugin on
 set visualbell
 
 "Set current directory as working directory
-set autochdir
+"set autochdir
 
 "Set vim file to autoupdate when changed (hopefully)
 set autoread
+
+"Set lines to (visuall) break at whitespace instead of inside words
+set linebreak
 
 "End basic settings}}}2
 
@@ -148,6 +151,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 :iabbrev adn and
 :iabbrev waht what
 :iabbrev tehn then
+:iabbrev teh the
 :iabbrev @@1 petebur@gmail.com
 :iabbrev ipd import pandas as pd
 :iabbrev inp import numpy as np
