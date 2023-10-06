@@ -31,7 +31,7 @@ set visualbell
 "Set vim file to autoupdate when changed (hopefully)
 set autoread
 
-"Set lines to (visuall) break at whitespace instead of inside words
+"Set lines to (visually) break at whitespace instead of inside words
 set linebreak
 
 "End basic settings}}}2
