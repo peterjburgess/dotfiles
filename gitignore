@@ -1,0 +1,3 @@
+# Ignore tags files and vim swp files
+tags
+*.swp
