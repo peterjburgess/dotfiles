@@ -99,8 +99,9 @@ nnoremap <leader>_ ddkP
 
 "Text mappings ------------------------{{{3
 "Put quotes around current word in normal mode
-nnoremap <leader>" lbi"<esc>ea"<esc>
-nnoremap <leader>' lbi'<esc>ea'<esc>
+nnoremap <leader>" lBi"<esc>Ea"<esc>
+nnoremap <leader>' lBi'<esc>Ea'<esc>
+nnoremap <leader>` lBi`<esc>Ea`<esc>
 
 "Allow uppercasing word in insert and normal modes
 inoremap <c-u> <esc>viwU<esc>i
@@ -197,6 +198,12 @@ augroup filetype_md
   "be escaped from the map as well as in the search
   autocmd FileType markdown onoremap <buffer> ih :<c-u>execute "normal! ?\\(^==\\+$\\)\\\|\\(^--\\+$\\)\r:nohlsearch\rkvg_"<cr>
   autocmd FileType markdown onoremap <buffer> ah :<c-u>execute "normal! ?\\(^==\\+$\\)\\\|\\(^--\\+$\\)\r:nohlsearch\rg_vk0"<cr>
+  "Convert current line to = or -
+  autocmd FileType markdown nnoremap <localleader>= yypVr=
+  autocmd FileType markdown nnoremap <localleader>- yypVr-
+  "Set default tabwidth to 4 spaces
+  autocmd FileType markdown set shiftwidth=4
+  autocmd FileType markdown set tabstop=4
 augroup END
 "End Markdown }}}2
 
