@@ -45,6 +45,8 @@ colorscheme ron
 
 "Highlight Searches
 set hlsearch
+" Easily turn off highlighting
+nnoremap <leader>n :nohl<cr>
 
 "Display Line numbers
 set number
@@ -67,6 +69,10 @@ set autoindent
 set expandtab
 set shiftwidth=2
 set tabstop=2
+
+"For python files, set 4 spaces as the default indentation after opening a
+"brace or parenthesis
+let pyindent_open_paren=4
 
 "Round shifts to nearest shiftwidth
 set shiftround
@@ -204,6 +210,9 @@ augroup filetype_md
   "Set default tabwidth to 4 spaces
   autocmd FileType markdown set shiftwidth=4
   autocmd FileType markdown set tabstop=4
+  "Set folding of sections between headers
+  autocmd FileType markdown set foldmethod=expr
+  autocmd FileType markdown set foldexpr=getline(v:lnum)!~'^[-=]\\+$'&&getline(v:lnum+1)!~'^[-=]\\+$'
 augroup END
 "End Markdown }}}2
 
