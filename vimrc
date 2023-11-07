@@ -40,12 +40,13 @@ set linebreak
 "Turn on syntax highlighting
 syntax on
  
-"Set the default colorscheme (works best in dark terminals for me)
-colorscheme ron
+"Set the default colorscheme
+set termguicolors
+colorscheme dplus
 
 "Highlight Searches
 set hlsearch
-" Easily turn off highlighting
+"Easily turn off highlighting
 nnoremap <leader>n :nohl<cr>
 
 "Display Line numbers
