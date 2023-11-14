@@ -70,6 +70,7 @@ set autoindent
 set expandtab
 set shiftwidth=2
 set tabstop=2
+set softtabstop=2
 
 "For python files, set 4 spaces as the default indentation after opening a
 "brace or parenthesis
@@ -160,6 +161,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 :iabbrev waht what
 :iabbrev tehn then
 :iabbrev teh the
+:iabbrev Teh The
 :iabbrev @@1 petebur@gmail.com
 :iabbrev ipd import pandas as pd
 :iabbrev inp import numpy as np
@@ -211,6 +213,7 @@ augroup filetype_md
   "Set default tabwidth to 4 spaces
   autocmd FileType markdown set shiftwidth=4
   autocmd FileType markdown set tabstop=4
+  autocmd FileType markdown set softtabstop=4
   "Set folding of sections between headers
   autocmd FileType markdown set foldmethod=expr
   autocmd FileType markdown set foldexpr=getline(v:lnum)!~'^[-=]\\+$'&&getline(v:lnum+1)!~'^[-=]\\+$'

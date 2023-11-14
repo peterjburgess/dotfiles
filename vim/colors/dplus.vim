@@ -6,7 +6,7 @@ if exists("syntax_on")
   syntax reset
 endif
 let g:colors_name = "dark+"
-hi Normal		guifg=#9CDCFE guibg=#1E1E1E
+hi Normal		guifg=#DDDDDD guibg=#1E1E1E
 hi NonText		guifg=darkgray guibg=#1E1E1E
 hi Include  guifg=#C586C0
 hi Function guifg=#DCDCAA
@@ -19,6 +19,13 @@ hi Constant	 guifg=#9CDCFE
 hi Identifier	guifg=#9CDCFE	gui=NONE
 hi String guifg=#CE9178
 hi Type			guifg=#4EC9B0	gui=bold
+
+"TODO create markdown syntax file
+"TODO look up syn-conceal for hiding characters
+"TODO look up block highlighting
+hi markdownCode guibg=#444444
+hi markdownCodeBlock    guifg=#9CDCFE
+hi link markdownCodeDelimiter Ignore
 
 hi preproc		guifg=#C586C0
 hi special		guifg=yellow
