@@ -34,6 +34,11 @@ set autoread
 "Set lines to (visually) break at whitespace instead of inside words
 set linebreak
 
+"Set searches to be case insensitive by default
+set ignorecase
+set smartcase
+set incsearch
+
 "End basic settings}}}2
 
 "Display settings -------------------------------{{{2
@@ -41,8 +46,13 @@ set linebreak
 syntax on
  
 "Set the default colorscheme
-set termguicolors
-colorscheme dplus
+"set termguicolors
+"colorscheme default
+
+"make sure that visual mode works properly with light mode
+if &background=="light"
+  hi Visual cterm=NONE ctermbg=grey
+endif
 
 "Highlight Searches
 set hlsearch
