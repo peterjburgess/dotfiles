@@ -15,9 +15,9 @@ syntax region pythonFString matchgroup=pythonQuotes
       \  start=+[fF]\=\z(['"]\)+ end="\z1" skip="\\\\\|\\\z1"
       \ contains=pythonEscape,@Spell,pythonFStringVariable
 
-" TODO define syntax for type hints
+syntax match pythonFStringVariable "{.\{-}}" contained
 
-syntax match pythonFStringVariable "{.*}" contained
+" TODO define syntax for type hints
 
 highlight link pythonFString          String
 highlight link pythonFStringVariable  Normal
