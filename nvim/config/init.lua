@@ -22,17 +22,17 @@ vim.opt.scrolloff = 5
 -- vim.opt.cursorline = true
 
 -- Easily turn off highlighting
-vim.keymap.set('n', '<leader>n', '<cmd>nohl<cr>')
+vim.keymap.set('n', '<leader>n', '<cmd>nohl<cr>', {desc = 'Turn off search result highlight'})
 
 -- Navigation remappings
-vim.keymap.set('i', 'jk', '<esc>')
-vim.keymap.set('v', '<leader>jk', '<esc>')
+vim.keymap.set('i', 'jk', '<esc>', {desc = 'Map jk to leave insert mode'})
+vim.keymap.set('v', '<leader>jk', '<esc>', {desc = 'Map leader jk to leave insert mode'})
 
 -- Allow for easier navigation around splits
-vim.keymap.set('n', '<leader>h', '<c-w>h')
-vim.keymap.set('n', '<leader>j', '<c-w>j')
-vim.keymap.set('n', '<leader>k', '<c-w>k')
-vim.keymap.set('n', '<leader>l', '<c-w>l')
+vim.keymap.set('n', '<leader>h', '<c-w>h', {desc = 'Go left one window with leader h'})
+vim.keymap.set('n', '<leader>j', '<c-w>j', {desc = 'Go down one window with leader j'})
+vim.keymap.set('n', '<leader>k', '<c-w>k', {desc = 'Go up one window with leader k'})
+vim.keymap.set('n', '<leader>l', '<c-w>l', {desc = 'Go right one window with leader l'})
 
 -- Easily open file explorer
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
@@ -97,6 +97,10 @@ vim.cmd([[
   :iabbrev ipd import pandas as pd
   :iabbrev inp import numpy as np
 ]])
+
+-- Set the colorscheme
+
+vim.cmd('colorscheme halfdark')
 
 -- Load plugins
 -- require('config.lazy')
