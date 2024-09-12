@@ -7,8 +7,8 @@ if exists("syntax_on")
 endif
 let g:colors_name = "halfdark"
 
-hi Normal   guifg=#DCDFE4 guibg=#282C34
-hi NonText  guifg=#5A6374 guibg=#282C34
+hi Normal   guifg=#DCDFE4 
+hi NonText  guifg=#5A6374 
 hi Comment  guifg=#C678DD
 hi Constant guifg=#61AFEF
 hi Identifier guifg=#61AFEF

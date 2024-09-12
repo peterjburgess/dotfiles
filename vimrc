@@ -62,6 +62,9 @@ nnoremap <leader>n :nohl<cr>
 "Display Line numbers
 set number
 
+"Set window to always maintain some context
+set scrolloff=5
+
 "Display Cursor position on last line of the screen or in status line of window
 set ruler
 
