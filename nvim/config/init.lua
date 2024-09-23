@@ -34,6 +34,9 @@ vim.keymap.set('n', '<leader>j', '<c-w>j', {desc = 'Go down one window with lead
 vim.keymap.set('n', '<leader>k', '<c-w>k', {desc = 'Go up one window with leader k'})
 vim.keymap.set('n', '<leader>l', '<c-w>l', {desc = 'Go right one window with leader l'})
 
+-- Open vertical splits on the right
+vim.opt.splitright = true
+
 -- Easily open file explorer
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
@@ -63,7 +66,7 @@ vim.keymap.set('n', '<leader>o', 'o<esc>')
 vim.keymap.set('n', '<leader>O', 'O<esc>')
 
 -- Movement mappings
--- Allow movements to apply insoud and around parentheses, curly braces and square brackets
+-- Allow movements to apply in and around parentheses, curly braces and square brackets
 vim.keymap.set('o', 'in(', '<cmd>normal! f(vi(<cr>')
 vim.keymap.set('o', 'il(', '<cmd>normal! F)vi(<cr>')
 vim.keymap.set('o', 'an(', '<cmd>normal! f(va(<cr>')
@@ -101,6 +104,28 @@ vim.cmd([[
 -- Set the colorscheme
 
 vim.cmd('colorscheme halfdark')
+
+-- Python autocommands
+local pycmd = vim.api.nvim_create_augroup('python', { clear = false })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'python',
+  callback = function()
+    vim.keymap.set('n', '<F5>', ':!python %<CR>')
+  end,
+  desc = 'Allow the current Python file to be run with F5',
+  group = pycmd
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'python',
+  callback = function()
+    vim.treesitter.start()
+  end,
+  group = pycmd,
+  desc = 'Start Treesitter when opening a Python file'
+})
+-- Enable treesitter for syntax highlighting
+-- vim.treesitter.start()
 
 -- Load plugins
 -- require('config.lazy')
