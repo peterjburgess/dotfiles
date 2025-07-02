@@ -26,3 +26,11 @@ end)
 
 -- Get to normal mode in the terminal by double hitting esc
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+
+-- Use Powershell as the default shell for Windows
+if vim.loop.os_uname().sysname == "Windows_NT" then
+    vim.o.shell = 'powershell'
+    vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+    vim.o.shellquote = ""
+    vim.o.shellxquote = ""
+end
