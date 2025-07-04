@@ -10,18 +10,29 @@ echo "Updating pip"
 
 python -m pip install -U pip
 
-echo "Installing keyring and artifacts-keyring"
+echo "Checking if this is a work environment and so should use DevOps artifacts feed"
 
-python -m pip install keyring artifacts-keyring
+$currentDir = Get-Location
 
-echo "Creating pip.ini file in virtual environment to point to artifacts feed"
+if ($env:COMPUTERNAME -like "*Work*" -or $(Get-Location).Path -like "*Work*"){
+    echo "Work location found"
 
-$iniText = @"
-[global]
-index-url=https://pkgs.dev.azure.com/AlbertaInnovatesCPR/Reporting/_packaging/AIReporting/pypi/simple/
-"@
+    echo "Installing keyring and artifacts-keyring"
 
-New-Item .venv\pip.ini -Value $iniText
+    python -m pip install keyring artifacts-keyring
+
+    echo "Creating pip.ini file in virtual environment to point to artifacts feed"
+
+    $iniText = "
+    [global]
+    index-url=https://pkgs.dev.azure.com/AlbertaInnovatesCPR/Reporting/_packaging/AIReporting/pypi/simple/
+    "
+
+    New-Item .venv\pip.ini -Value $iniText
+}
+else{
+    "Not a work location"
+}
 
 echo "Checking for existence of requirements.txt file..."
 
