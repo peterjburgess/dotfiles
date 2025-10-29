@@ -9,11 +9,14 @@ vim.keymap.set("n", "<leader><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<leader>x", ":.lua<CR>")
 vim.keymap.set("v", "<leader>x", ":lua<CR>")
 
---Allow for easier navigation around splits
+-- Allow for easier navigation around splits
 vim.keymap.set("n", "<leader>h", "<c-w>h")
 vim.keymap.set("n", "<leader>j", "<c-w>j")
 vim.keymap.set("n", "<leader>k", "<c-w>k")
 vim.keymap.set("n", "<leader>l", "<c-w>l")
+
+-- Easily remove highlighting
+vim.keymap.set("n", "<leader>n", ":nohlsearch<CR>")
 
 -- Terminal keymaps
 

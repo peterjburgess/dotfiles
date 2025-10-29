@@ -1,6 +1,6 @@
 echo "Creating virtual environment in .venv directory"
 
-python -m venv .venv
+py -m venv .venv
 
 echo "Activating virtual environment"
 
