@@ -14,7 +14,7 @@ echo "Checking if this is a work environment and so should use DevOps artifacts 
 
 $currentDir = Get-Location
 
-if ($env:COMPUTERNAME -like "*Work*" -or $(Get-Location).Path -like "*Work*"){
+if ($env:COMPUTERNAME -like "*ERDP*" -or $(Get-Location).Path -like "*Work*"){
     echo "Work location found"
 
     echo "Installing keyring and artifacts-keyring"
